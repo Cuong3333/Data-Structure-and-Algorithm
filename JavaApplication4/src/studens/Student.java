@@ -4,46 +4,58 @@
  */
 package studens;
 
-/**
- *
- * @author cuong
- */
-class Student {
-    String id;
-    String name;
-    double marks;
-    String rank;
+public class Student {
+    private String id;
+    private String name;
+    private double marks;
+    private int age;
 
-    // Hàm tạo cho lớp Student
-    public Student(String id, String name, double marks) {
+    // Constructor
+    public Student(String id, String name, double marks, int age) {
         this.id = id;
         this.name = name;
         this.marks = marks;
-        this.rank = calculateRank(marks);
+        this.age = age;
     }
 
-    // Xác định xếp hạng dựa trên điểm số
-    public String calculateRank(double marks) {
-        if (marks >= 0 && marks < 5.0) {
-            return "Fail";
-        } else if (marks >= 5.0 && marks < 6.5) {
-            return "Medium";
-        } else if (marks >= 6.5 && marks < 7.5) {
-            return "Good";
-        } else if (marks >= 7.5 && marks < 9.0) {
-            return "Very Good";
-        } else if (marks >= 9.0 && marks <= 10.0) {
-            return "Excellent";
-        } else {
-            return "Invalid Marks";
-        }
+    // Getter and Setter for id
+    public String getId() {
+        return id;
     }
 
-    // Hiển thị thông tin sinh viên
-    public void display() {
-        System.out.println("ID: " + id);
-        System.out.println("Name: " + name);
-        System.out.println("Marks: " + marks);
-        System.out.println("Rank: " + rank);
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    // Getter and Setter for name
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Getter and Setter for marks
+    public double getMarks() {
+        return marks;
+    }
+
+    public void setMarks(double marks) {
+        this.marks = marks;
+    }
+
+    // Getter and Setter for age
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{id='" + id + "', name='" + name + "', marks=" + marks + ", age=" + age + "}";
     }
 }
